@@ -77,6 +77,11 @@ class ProjectResource(Resource):
 # Adiciona os recursos à API
 api.add_resource(ProjectResource, "/projects", "/projects/<string:project_name>")
 
+@app.route("/")
+def index():
+    return "Hello World!"
+
+
 # Inicializa a aplicação
 if __name__ == "__main__":
     with app.app_context():
