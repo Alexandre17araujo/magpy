@@ -24,15 +24,15 @@ MagPy é uma API RESTful desenvolvida em Python, utilizando Flask e SQLAlchemy, 
 
 ## Pré-requisitos
 
-- Python 3.7+
+- Python 3.11+
 - Flask e SQLAlchemy (instaladas via `requirements.txt`)
 
 ## Instalação
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/magpy-api.git
-   cd magpy-api
+   git clone https://github.com/Alexandre17araujo/magpy.git
+   cd magpy
 
 
 Crie e ative um ambiente virtual (opcional, mas recomendado):
@@ -47,6 +47,7 @@ Execute a aplicação
 	python3.11 main.py
 
 Endpoints da API
+
 1. Criar um Projeto
 Endpoint: /projects
 Método: POST
