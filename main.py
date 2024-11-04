@@ -2,10 +2,13 @@ from flask import Flask, jsonify, request
 from flask_restful import Api, Resource
 from models import db, Project, Package
 import requests
+import os
 
 # Inicializa o app Flask
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///meubanco.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///meubanco.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join('data.sqlite')
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Inicializa o banco de dados com o app
