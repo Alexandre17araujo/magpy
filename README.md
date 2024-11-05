@@ -23,38 +23,49 @@ MagPy é uma API RESTful desenvolvida em Python, utilizando Flask e SQLAlchemy, 
 - `requirements.txt`: Lista de dependências do projeto.
 
 ## Pré-requisitos
-
+![Python](https://img.shields.io/badge/Python-000?style=for-the-badge&logo=python)
+![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
+```
 - Python 3.12+
 - Flask e SQLAlchemy (instaladas via `requirements.txt`)
-
+```
 ## Instalação
 
 1. Clone este repositório:
-   ```bash
+```
    git clone https://github.com/Alexandre17araujo/magpy.git
    cd magpy
+```
 
-
-Crie e ative um ambiente virtual (opcional, mas recomendado):
+## Crie e ative um ambiente virtual (opcional, mas recomendado):
+```
 	python -m venv venv
 	source venv/bin/activate  # Linux
 	venv\Scripts\activate     # Windows
+```
 
-Instale as dependencias
+## Instale as dependencias
+```
 	pip install -r requirements.txt
+```
 
-Execute a aplicação
-	python3.12 main.py
+## Execute a aplicação 
+![Python](https://img.shields.io/badge/Python-000?style=for-the-badge&logo=python)
 
-Endpoints da API
+```	
+    python3.12 main.py 
+```
 
-1. Criar um Projeto
-Endpoint: /projects
+
+## Uso das Endpoints
+
+### 1. Criar um Projeto com "POST"
+```
+Endpoint: https://link_da_sua_api/projects
 Método: POST
+Exemplo de Request
 
-Exemplo de Request (JSON):
-
-	{
+{
   "name": "meu_projeto",
   "packages": [
     {"name": "requests", "version": "2.26.0"},
@@ -62,56 +73,69 @@ Exemplo de Request (JSON):
   ]
 }
 
+```
+#### Resposta de Sucesso (201):
 
-Resposta de Sucesso (201):
-
+```
 	{
   	"message": "Project created successfully"
 	}
+```
 
-2. Listar um Projeto
-Endpoint: /projects/<project_name>
+### 2. Listando Projetos, com "GET".
+
+```
+https://link_da_sua_api/projects/nome_projeto
 Método: GET
 Exemplo de Request:
 
-	GET /projects/meu_projeto
+	GET /projects/nome_projeto
+```
 
-
-
-Resposta de Sucesso (200):
-
+#### Resposta de Sucesso (200):
+```
 {
-  	"name": "meu_projeto",
+  	"name": "nome_projeto",
 	"packages": [
     {"name": "requests", "version": "2.26.0"},
     {"name": "flask", "version": "2.0.2"}
 ]
 }
+```
 
-
-3. Excluir um Projeto
-Endpoint: /projects/<project_name>
+### 3. Excluir um Projeto
+```
+Endpoint: https://link_da_sua_api/projects/nome_projeto
 Método: DELETE
 
 Exemplo de Request:
 
-DELETE /projects/meu_projeto
+DELETE /projects/nome_projeto
+```
 
-
-Resposta de Sucesso (200):
-
+#### Resposta de Sucesso (200):
+```
 {
   "message": "Project deleted"
 }
+```
 
-
-Tratamento de Erros
+### Tratamento de Erros
 	400: Parâmetros inválidos ou projeto/pacote inexistente no PyPI.
 	404: Projeto não encontrado.
 	500: Erro interno do servidor.
 
 
-Testando com o Postman
+### Testando com o Postman
 	Abra o Postman.
 	Configure as requisições conforme os endpoints e exemplos acima.
-	Verifique o banco de dados para confirmar que as informações estão sendo armazenadas corretamente.
+	Verifique o banco de dados para confirmar que as informações estão sendo armazenadas e deletadas corretamente.
+
+### Documentação
+
+- [Python](https://docs.python.org/pt-br/3.12/library/index.html)
+- [Flask](https://flask-ptbr.readthedocs.io/en/latest/)
+- [flask Restful](https://flask-restful.readthedocs.io/en/latest/)
+- [Requests](https://requests.readthedocs.io/projects/pt/pt-br/latest/user/quickstart.html)
+- [OS](https://docs.python.org/pt-br/3/library/os.html)
+- [SQlAchemy](https://docs.sqlalchemy.org/en/20/)
